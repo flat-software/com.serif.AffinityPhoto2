@@ -1,0 +1,64 @@
+app-id: com.serif.AffinityPhoto
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.mingw-w64
+base: org.winehq.Wine
+base-version: stable-24.08
+command: com.serif.AffinityPhoto
+tags:
+  - proprietary
+separate-locales: false
+
+finish-args:
+  - --socket=wayland
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=dri
+  - --share=network
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
+
+inherit-extensions:
+  - org.freedesktop.Platform.Compat.i386
+  - org.freedesktop.Platform.ffmpeg_full.i386
+  - org.freedesktop.Platform.ffmpeg-full
+  - org.freedesktop.Platform.GL32
+  - org.freedesktop.Platform.VAAPI.Intel.i386
+  - org.winehq.Wine.DLLs
+  - org.winehq.Wine.gecko
+  - org.winehq.Wine.mono
+
+build-options:
+  append-path: /usr/lib/sdk/mingw-w64/bin
+
+modules:
+  # Dependencies.
+  - shared-modules/glu/glu-9.json
+
+  - name: customwine
+    buildsystem: autotools
+    builddir: true
+    config-env:
+      - BUILDDIR=$FLATPAK_BUILDDIR
+    config-opts:
+      - --prefix=$BUILDDIR/wine-install
+      - --enable-archs=i386,x86_64
+    make-args:
+      - --jobs 4
+    make-install-args:
+      - --jobs 4
+    sources:
+      - type: git
+        url: https://gitlab.winehq.org/ElementalWarrior/wine.git
+        commit: a7c9b19e1a26cf49c63a7c19189a3e2bbe2c6ac2
+
+  # Affinity Photo.
+  - name: affinityphoto
+    buildsystem: simple
+    build-commands:
+      - pwd
+
+    sources:
+      - type: file
+        path: affinity-photo-msi-2.6.2.exe
