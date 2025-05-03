@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Affinity Photo
-Exec=com.serif.AffinityPhoto
+Exec=com.serif.AffinityPhoto %U
 Icon=com.serif.AffinityPhoto
 MimeType=image/afphoto;application/x-affinity;
 Categories=Graphics;
