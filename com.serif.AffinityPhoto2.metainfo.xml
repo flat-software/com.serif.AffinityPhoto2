@@ -88,6 +88,22 @@
     </ul>
   </description>
   <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/flat-software/com.serif.AffinityPhoto2/3bfe311f6937ed2e09569a4eb7612b7a4d85b3c3/screenshots/screenshot1.png</image>
+      <caption>Retouching</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flat-software/com.serif.AffinityPhoto2/3bfe311f6937ed2e09569a4eb7612b7a4d85b3c3/screenshots/screenshot2.png</image>
+      <caption>Blend modes</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flat-software/com.serif.AffinityPhoto2/3bfe311f6937ed2e09569a4eb7612b7a4d85b3c3/screenshots/screenshot3.png</image>
+      <caption>Live masks</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flat-software/com.serif.AffinityPhoto2/3bfe311f6937ed2e09569a4eb7612b7a4d85b3c3/screenshots/screenshot4.png</image>
+      <caption>Panorama</caption>
+    </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="social-info">moderate</content_attribute>

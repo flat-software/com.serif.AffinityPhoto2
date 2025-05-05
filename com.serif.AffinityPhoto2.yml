@@ -1,12 +1,10 @@
-app-id: com.serif.AffinityPhoto
+app-id: com.serif.AffinityPhoto2
 runtime: org.freedesktop.Platform
 runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
-# sdk-extensions:
-# - org.freedesktop.Sdk.Extension.mingw-w64
 base: org.winehq.Wine
 base-version: stable-24.08
-command: com.serif.AffinityPhoto
+command: com.serif.AffinityPhoto2
 tags:
   - proprietary
 separate-locales: false
@@ -45,20 +43,38 @@ modules:
     buildsystem: simple
     build-commands:
       - |
-        for s in 128; do
+        for s in 16 32 64 128 256 512; do
           install -Dm644 icon${s}.png /app/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.png
         done
 
       - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications
-      # - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
       - install -Dm755 affinityPhoto.sh /app/bin/${FLATPAK_ID}
 
     sources:
       - type: file
-        path: com.serif.AffinityPhoto.desktop
+        path: affinityPhoto2.sh
 
       - type: file
-        path: affinityPhoto.sh
+        path: com.serif.AffinityPhoto2.desktop
+
+      - type: file
+        path: com.serif.AffinityPhoto2.metainfo.xml
+
+      - type: file
+        path: icons/icon16.png
+
+      - type: file
+        path: icons/icon32.png
+
+      - type: file
+        path: icons/icon64.png
 
       - type: file
         path: icons/icon128.png
+
+      - type: file
+        path: icons/icon256.png
+
+      - type: file
+        path: icons/icon512.png
