@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component type="desktop-application">
+  <id>com.serif.AffinityPhoto2</id>
+  <launchable type="desktop-id">com.serif.AffinityPhoto2.desktop</launchable>
+  <name>Affinity Photo 2</name>
+  <summary>Create, edit, retouch &amp; share!</summary>
+  <developer id="com.serif">
+    <name>Serif (Europe) Ltd.</name>
+  </developer>
+  <url type="homepage">https://affinity.serif.com/en-us/photo/</url>
+  <url type="help">https://affinity.serif.com/en-us/learn/photo/desktop/</url>
+  <project_license>LicenseRef-proprietary=https://affinity.serif.com/en-us/licence/</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <description>
+    <p>The first choice of millions of creative professionals around the world, the award-winning Affinity Photo set a new standard for quality and value in the world of image editing. The ultra-powerful Affinity Photo 2 takes the experience to a whole new level, thanks to the addition of incredible new features, hundreds of enhancements, and a completely redesigned UI for an improved workflow.</p>
+
+    <p>REFINED &amp; REDESIGNED WITH POWERFUL NEW FEATURES</p>
+    <ul>
+      <li>Fully redeveloped UI, tool, and button icons</li>
+      <li>Completely revamped Layers Panel</li>
+      <li>Non-destructive RAW develop</li>
+      <li>Luminosity, hue range and band pass live masks</li>
+      <li>Compound masks</li>
+      <li>Non-destructive Live Mesh Warp filter</li>
+      <li>Smart layer states to experiment with design options and versions</li>
+      <li>Drag / drop bitmap texture fills</li>
+      <li>JPEG XL file import and export</li>
+      <li>Force scale everything</li>
+      <li>Multiple shadow, outline and overlay layer effects per object</li>
+    </ul>
+
+    <p>INCREDIBLE PERFORMANCE</p>
+    <ul>
+      <li>Massive image support (100+ Megapixels)</li>
+      <li>Pan and zoom at maximum refresh rate, with ProMotion support on latest Apple displays</li>
+      <li>Open, edit and save Photoshop® PSD files</li>
+      <li>RGB, CMYK, Greyscale and LAB color spaces</li>
+      <li>Full 16-bit and linear unbounded 32-bit per channel editing</li>
+      <li>Work with all standard formats like PNG, TIFF, JPG, JPEG XL, GIF, SVG, EPS, EXR, HDR and PDF</li>
+    </ul>
+
+    <p>UNSURPASSED PRODUCTIVITY</p>
+    <ul>
+      <li>Full support for unlimited layers, layer groups, adjustment layers, filter layers and masks</li>
+      <li>Edit live filters, adjustments, effects, blend modes and masks non-destructively</li>
+      <li>Savable undo history</li>
+      <li>Record and play macros</li>
+      <li>Isolate, edit, and duplicate spare channels with a simple click</li>
+      <li>Savable workspace presets for multiple UI layouts</li>
+      <li>PDF passthrough, import, edit and export</li>
+      <li>Link layers to edit simultaneously</li>
+    </ul>
+
+    <p>PROFESSIONAL IMAGE PROCESSING</p>
+    <ul>
+      <li>Open RAW and other images in a 16-bit development workspace</li>
+      <li>Adjust exposure, blackpoint, clarity, vibrance, white balance, shadows, highlights and more</li>
+      <li>Advanced lens corrections including chromatic aberration, defringe, vignette, noise reduction</li>
+      <li>Paint areas or use fully customizable gradients to mask adjustments</li>
+      <li>View histograms, blown highlights, shadows and tones as well as detailed EXIF information</li>
+      <li>Focus Merge, HDR Merge and Tone mapping for advanced image processing</li>
+    </ul>
+
+    <p>QUALITY RETOUCHING &amp; CORRECTION TOOLS</p>
+    <ul>
+      <li>Intuitive selection brush makes selections simple, even down to strands of hair</li>
+      <li>Dodge, burn, clone, patch, blemish, red eye and advanced inpainting for retouching</li>
+      <li>Smooth and retouch skin with built-in frequency separation</li>
+      <li>Dedicated Liquify persona and non-destructive filter version gives freehand control over warps, twirls, pinch, punch, and turbulence</li>
+    </ul>
+
+    <p>ADVANCED BRUSH ENGINE</p>
+    <ul>
+      <li>Huge library of painting, drawing, textures, and professional DAUB® Brushes included</li>
+      <li>Create custom brushes and nozzles with full control over advanced dynamics</li>
+      <li>Combine multiple brushes together and paint in a single stroke</li>
+      <li>Full support for Wacom and other graphics tablets, including pressure, tilt, and shortcut buttons</li>
+      <li>Real-time preview of your brush nozzle</li>
+    </ul>
+
+    <p>FAST, CUSTOMIZABLE EFFECTS</p>
+    <ul>
+      <li>Massive collection of effects available, including blurs, distortions, tilt-shift, shadows, glows, lighting, and many more</li>
+      <li>Apply effects non-destructively with live effect layers</li>
+      <li>Path text capabilities</li>
+      <li>Add and edit pattern layers non-destructively</li>
+      <li>Add and edit pattern layers non-destructively</li>
+    </ul>
+  </description>
+  <screenshots>
+  </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">moderate</content_attribute>
+  </content_rating>
+  <requires>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <display_length compare="ge">768</display_length>
+  </requires>
+  <releases>
+    <release version="2.6.2" date="2025-05-04">
+      <description>
+        <p>Free for all V2 customers, 2.6 brings some very exciting updates to Affinity Photo, including our very first Machine Learning features.</p>
+        <ul>
+          <li>Select Subject – this new Machine Learning feature analyses your image and selects what it considers to be the main subject of the scene</li>
+          <li>Object Selection – speed up your editing process by using this new Machine Learning tool that automatically selects objects of your choosing in an image</li>
+          <li>Updated Camera SerifLabs RAW Support – the SerifLabs RAW engine has now been updated to include additional RAW formats</li>
+          <li>Updated Lens Correction – new cameras and lenses are now recognised by the Lens Recognition database</li>
+          <li>Colour Picker improvements – when using the Colour Picker on the Colour Panel, your picked colour will be automatically applied to the selected object, so you’re no longer required to select the colour well</li>
+          <li>Many more improvements and bug fixes</li>
+        </ul>
+        <p>Please note: The Machine Learning features are optional and require downloading of the relevant models to work. It’s installed as a pre-trained model and doesn’t use any of your own data for further training / none of your data leaves your device at any time.</p>
+      </description>
+    </release>
+  </releases>
+</component>

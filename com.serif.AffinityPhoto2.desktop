@@ -1,8 +1,10 @@
 [Desktop Entry]
 Type=Application
 Name=Affinity Photo
-Exec=com.serif.AffinityPhoto %U
-Icon=com.serif.AffinityPhoto
+Comment=Image Editor
+Exec=com.serif.AffinityPhoto2 %U
+Icon=com.serif.AffinityPhoto2
 MimeType=image/afphoto;application/x-affinity;
 Categories=Graphics;
 StartupNotify=true
+StartupWMClass=photo.exe
