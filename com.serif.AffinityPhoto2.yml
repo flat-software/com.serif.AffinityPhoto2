@@ -35,8 +35,8 @@ modules:
     sources:
       - type: archive
         dest-filename: specialwine.zip
-        url: https://github.com/Twig6943/ElementalWarrior-Wine-binaries/releases/download/1.1/ElementalWarriorWine.zip
-        sha256: 1ef9c0c2629c16e4cff3882a4f78c99390e67c9d9d1f50d7bfa1bd3e2d9feb52
+        url: https://github.com/quentez/wine/actions/runs/14842607128/artifacts/3064223969
+        sha256: 9df0deec2cf4f37c2efb6cce342e9cf921828ce2d53e1a5d3d51b811105dc8bb
 
   # Affinity Photo.
   - name: affinityphoto
@@ -47,13 +47,23 @@ modules:
           install -Dm644 icon${s}.png /app/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.png
         done
 
+      - install -Dm755 apply_extra.sh /app/bin/apply_extra
+      - install -Dm755 affinityPhoto.sh /app/bin/${FLATPAK_ID}
       - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
-      - install -Dm755 affinityPhoto.sh /app/bin/${FLATPAK_ID}
 
     sources:
+      - type: extra_data
+        filename: winmetadata.zip
+        url: https://archive.org/download/win-metadata/WinMetadata.zip
+        sha256: 02e5c2896b12675548b6576bcf9e1497e643a0c4f5fdc8ace5c113a554a954a0
+        size: 2301811
+
       - type: file
-        path: affinityPhoto2.sh
+        path: shell/apply_extra.sh
+
+      - type: file
+        path: shell/affinityPhoto2.sh
 
       - type: file
         path: com.serif.AffinityPhoto2.desktop
