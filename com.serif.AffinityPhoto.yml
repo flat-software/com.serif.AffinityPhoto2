@@ -26,35 +26,19 @@ inherit-extensions:
   - org.freedesktop.Platform.VAAPI.Intel.i386
   - org.freedesktop.Platform.ffmpeg-full
   - org.freedesktop.Platform.ffmpeg_full.i386
-  - org.winehq.Wine.gecko
-  - org.winehq.Wine.mono
-
-# build-options:
-#   append-path: /usr/lib/sdk/mingw-w64/bin
 
 modules:
   # Dependencies.
-  # - name: specialwine
-  #   buildsystem: simple
-  #   build-commands:
-  #     - mkdir /app/specialwine
-  #     - cp -r ./* /app/specialwine
-  #   sources:
-  #     - type: archive
-  #       dest-filename: specialwine.zip
-  #       url: https://github.com/Twig6943/ElementalWarrior-Wine-binaries/releases/download/1.1/ElementalWarriorWine.zip
-  #       sha256: 1ef9c0c2629c16e4cff3882a4f78c99390e67c9d9d1f50d7bfa1bd3e2d9feb52
-
   - name: specialwine
     buildsystem: simple
     build-commands:
-      - ls
       - mkdir /app/specialwine
       - cp -r ./* /app/specialwine
     sources:
       - type: archive
         dest-filename: specialwine.zip
-        path: specialwine.tar.xz
+        url: https://github.com/Twig6943/ElementalWarrior-Wine-binaries/releases/download/1.1/ElementalWarriorWine.zip
+        sha256: 1ef9c0c2629c16e4cff3882a4f78c99390e67c9d9d1f50d7bfa1bd3e2d9feb52
 
   # Affinity Photo.
   - name: affinityphoto
