@@ -15,6 +15,14 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --device=dri
+  - --filesystem=xdg-desktop
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-run/gvfs
+  - --filesystem=/media
+  - --filesystem=/run/media
+  - --filesystem=/mnt
   - --share=network
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 
@@ -35,13 +43,18 @@ modules:
     sources:
       - type: archive
         dest-filename: specialwine.zip
-        url: https://github.com/quentez/wine/actions/runs/14842607128/artifacts/3064223969
-        sha256: 9df0deec2cf4f37c2efb6cce342e9cf921828ce2d53e1a5d3d51b811105dc8bb
+        url: https://github.com/quentez/wine/actions/runs/14845989974/artifacts/3065498262
+        sha256: 98c22071d37b083c44c0b7b39b934f125e7b43ffb08bac54de7639a75fc1b540
 
   # Affinity Photo.
   - name: affinityphoto
     buildsystem: simple
     build-commands:
+      - mkdir /app/affinityphoto
+      - cp -r affinityPhoto/App /app/affinityphoto
+      - find /app/affinityphoto -type d -exec chmod 755 {} +
+      - find /app/affinityphoto -type f -exec chmod 644 {} +
+
       - |
         for s in 16 32 64 128 256 512; do
           install -Dm644 icon${s}.png /app/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.png
@@ -53,6 +66,17 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
 
     sources:
+      - type: archive
+        dest-filename: affinityphoto.zip
+        url: http://localhost:5173/download/2.6.2
+        sha256: 5fb4614834c5a9f990afa977b7d5dcd2675c26529bc09a468e7cd287bbaf5097
+        strip-components: 0
+        x-checker-data:
+          type: json
+          url: http://172.17.0.1:5173/latestversion
+          version-query: .url
+          url-query: .url
+
       - type: extra_data
         filename: winmetadata.zip
         url: https://archive.org/download/win-metadata/WinMetadata.zip
