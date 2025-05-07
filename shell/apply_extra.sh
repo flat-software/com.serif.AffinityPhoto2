@@ -1,15 +1,21 @@
-WINE_PREFIX="/app/extra/prefix"
-WINE="/app/specialwine/bin/wine"
+7z x winmetadata.zip > /dev/null
+rm winmetadata.zip
 
-# Create the Wine prefix.
-DISPLAY= /app/specialwine/bin/wineboot --init
+mkdir dotnet40
+mv dotNetFx40_Full_x86_x64.exe dotnet40/
 
-# Install dotnet and fonts with winetricks.
+mkdir dotnet48
+mv ndp48-x86-x64-allos-enu.exe dotnet48/
 
-
-# Set the windows version.
-"$WINE" winecfg -v win11
-
-# Install windows files.
-7z x winmetadata.zip -o winmetadata
-install -Dm644 winmetadata/* -t "${WINE_PREFIX}/drive_c/windows/system32/WinMetadata"
+mkdir corefonts
+mv andale32.exe corefonts/
+mv arial32.exe corefonts/
+mv arialb32.exe corefonts/
+mv comic32.exe corefonts/
+mv courie32.exe corefonts/
+mv georgi32.exe corefonts/
+mv impact32.exe corefonts/
+mv times32.exe corefonts/
+mv trebuc32.exe corefonts/
+mv verdan32.exe corefonts/
+mv webdin32.exe corefonts/

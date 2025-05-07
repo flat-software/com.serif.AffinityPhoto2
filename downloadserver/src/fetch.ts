@@ -1,3 +1,4 @@
+import {decodeHTML5} from "entities";
 import type {Version} from "./model.ts";
 
 const headers = {
@@ -31,19 +32,15 @@ export async function getLatestVersion(): Promise<Version | undefined> {
 
   return {
     version: match[2]!,
-    downloadUrl: match[1]!,
+    downloadUrl: decodeHTML5(match[1]!),
   };
 }
 
 export async function getDownload(downloadUrl: string) {
   const downloadResponse = await fetch(downloadUrl, {headers});
-  if (!downloadResponse.ok) {
-    throw new Error("Download URL request failed.");
-  }
-
   const downloadBody = downloadResponse.body as ReadableStream<Uint8Array>;
   if (!downloadResponse.ok || !downloadBody) {
-    throw new Error("Download request failed.");
+    throw new Error("Download request failed: " + downloadUrl);
   }
 
   return downloadResponse;
