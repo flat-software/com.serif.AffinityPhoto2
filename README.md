@@ -4,14 +4,14 @@ This is a work-in-progress of Affinity Photo 2 running on Wine in a Flatpak. Whi
 
 ## Progress
 
-- [x] Configure Wine prefix on first run.
-- [x] Display progress dialog on first run.
-- [x] Set DPI automatically.
-- [ ] Run on Wayland.
-- [ ] Enable OpenCL for all GPU vendors.
-- [ ] Fix empty "New" dialog.
-- [ ] Fix settings reset bug.
-- [ ] Fix export as PNG crash.
+- ✅ Configure Wine prefix on first run.
+- ✅ Display progress dialog on first run.
+- ✅ Set DPI automatically.
+- 🚫 Run on Wayland.
+- 🚫 Enable OpenCL for all GPU vendors.
+- 🚫 Fix empty "New" dialog.
+- 🚫 Fix settings reset bug.
+- 🚫 Fix export as PNG crash.
 
 ## How to build
 
