@@ -100,9 +100,14 @@ if [[ -z "$DPI_VALUE" ]]; then
 fi
 
 DPI_INT=$(printf "%.0f" "$DPI_VALUE")
-DPI_HEX="0x$(printf "%X" "$DPI_INT")"
-wine reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d "$DPI_HEX" /f
-echo "Setting Wine DPI to $DPI_INT $DPI_HEX"
+DPI_HEX="0x$(printf "%x" "$DPI_INT")"
+
+OLDDPI_HEX=$( wine reg query "HKEY_CURRENT_USER\Control Panel\Desktop" | grep "LogPixels" | awk ' {print $3} ' | sed 's/\r$//' )
+if [ "${OLDDPI_HEX}" != "${DPI_HEX}" ]; then
+  "${WINELOADER}" reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d "$DPI_HEX" /f
+  "${WINEPATH}/bin/wineserver" -k
+  echo "Setting Wine DPI from $OLDDPI_HEX to $DPI_INT $DPI_HEX"
+fi
 
 # Run the app.
 exec "${WINELOADER}" "${AFFINITY_PHOTO_EXE_PATH}" "$@"

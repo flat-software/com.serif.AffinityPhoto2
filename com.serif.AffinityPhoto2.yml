@@ -22,7 +22,7 @@ finish-args:
   - --filesystem=/media
   - --filesystem=/run/media
   - --filesystem=/mnt
-  # - --share=network
+  - --share=network
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 
 inherit-extensions:
