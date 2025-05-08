@@ -31,6 +31,7 @@ inherit-extensions:
   - org.freedesktop.Platform.VAAPI.Intel.i386
   - org.freedesktop.Platform.ffmpeg-full
   - org.freedesktop.Platform.ffmpeg_full.i386
+  - org.winehq.Wine.gecko
 
 modules:
   # Dependency: Display UI from shell script.
