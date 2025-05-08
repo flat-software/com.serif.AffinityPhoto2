@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="image/afphoto">
+    <comment>Affinity Photo files</comment>
+    <glob pattern="*.afphoto"/>
+  </mime-type>
+</mime-info>

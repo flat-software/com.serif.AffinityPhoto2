@@ -12,6 +12,7 @@ This is a work-in-progress of Affinity Photo 2 running on Wine in a Flatpak. Whi
 - 🚫 Fix empty "New" dialog.
 - 🚫 Fix settings reset bug.
 - 🚫 Fix export as PNG crash.
+- 🚫 File association doesn't open file.
 
 ## How to build
 

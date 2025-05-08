@@ -115,6 +115,10 @@ modules:
       - install -Dm755 affinityPhoto2.sh /app/bin/${FLATPAK_ID}
       - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo
+      - install -Dm644 ${FLATPAK_ID}.mime.xml -t /app/share/mime/packages
+
+      - update-mime-database /app/share/mime
+      - desktop-file-install --rebuild-mime-info-cache --dir=/app/share/applications ${FLATPAK_ID}.desktop
 
     sources:
       - type: extra-data
@@ -216,6 +220,9 @@ modules:
 
       - type: file
         path: com.serif.AffinityPhoto2.metainfo.xml
+
+      - type: file
+        path: com.serif.AffinityPhoto2.mime.xml
 
       - type: file
         path: icons/icon16.png
