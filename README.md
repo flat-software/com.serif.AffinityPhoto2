@@ -1,4 +1,4 @@
-# Flatpak: Affinity Photo 2
+# Flatpak — Affinity Photo 2
 
 This is a work-in-progress of Affinity Photo 2 running on Wine in a Flatpak. While it runs for the most part, it is still quite unstable and relying on it for critical work is not recommended.
 
