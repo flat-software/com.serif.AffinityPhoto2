@@ -1,0 +1,50 @@
+name: Check for updates
+on:
+  # Run every day.
+  schedule:
+    - cron: "0 0 * * *"
+
+  # Manual trigger.
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23
+
+      - name: Set dynamic env vars
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+
+      - name: Run local server
+        uses: JarvusInnovations/background-action@v1
+        with:
+          working-directory: downloadserver
+          wait-on: http-get://localhost:5173/info
+          run: |
+            npm ci
+            npm run start
+
+      - name: Test local server
+        run: curl http://localhost:5173/info
+
+      - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
+        env:
+          GIT_AUTHOR_NAME: Flatpak External Data Checker
+          GIT_COMMITTER_NAME: Flatpak External Data Checker
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: --update --never-fork ${{ env.REPO_NAME }}.yml
