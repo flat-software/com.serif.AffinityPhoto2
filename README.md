@@ -17,7 +17,7 @@ This is a work-in-progress of Affinity Photo 2 running on Wine in a Flatpak. Whi
 
 This will build and install the Flatpak to the local machine. Having Flathub as a Flatpak remote is required to fetch dependencies.
 
-1. Run the NodeJS download server.
+1. Run the NodeJS download server
 
 ```sh
 cd downloadserver
