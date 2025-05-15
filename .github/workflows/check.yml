@@ -51,4 +51,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           entrypoint: /bin/sh
-          args: -c "echo '172.17.0.1 localhost' > /etc/hosts && exec /app/flatpak-external-data-checker --update --never-fork ${{ env.REPO_NAME }}.yml"
+          args: >
+            -c "
+              echo '172.17.0.1 localhost' > /etc/hosts &&
+              exec /app/flatpak-external-data-checker --update --never-fork ${{ env.REPO_NAME }}.yml
+            "
