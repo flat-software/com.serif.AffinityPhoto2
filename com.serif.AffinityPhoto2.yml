@@ -99,7 +99,7 @@ modules:
         strip-components: 0
         x-checker-data:
           type: json
-          url: http://172.17.0.1:5173/latestversion
+          url: http://localhost:5173/latestversion
           version-query: .url
           url-query: .url
 

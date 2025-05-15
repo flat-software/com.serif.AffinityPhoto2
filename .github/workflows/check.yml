@@ -10,6 +10,9 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout
@@ -47,4 +50,7 @@ jobs:
           GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --update --never-fork ${{ env.REPO_NAME }}.yml
+          args: >
+            /bin/sh -c "
+              echo '172.17.0.1 localhost' >> /etc/hosts &&
+              exec /app/flatpak-external-data-checker --update --never-fork ${{ env.REPO_NAME }}.yml"
