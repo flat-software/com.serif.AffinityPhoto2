@@ -94,8 +94,8 @@ modules:
     sources:
       - type: archive
         dest-filename: affinityphoto.zip
-        url: http://localhost:5173/download/2.6.2
-        sha256: fd18dd10df6e2b88db9ccf730bbfd4b56d3677ce4eafc07b0df8ef57d373ab3a
+        url: http://localhost:5173/download/2.6.3
+        sha256: 26fd3149e8ccbd3cc75e916b68b572821588cebd8869e129262b62725d0c93b7
         strip-components: 0
         x-checker-data:
           type: json
