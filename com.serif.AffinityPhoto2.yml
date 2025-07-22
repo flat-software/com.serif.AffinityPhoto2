@@ -1,6 +1,6 @@
 app-id: com.serif.AffinityPhoto2
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: "48"
 sdk: org.gnome.Sdk
 base: org.winehq.Wine
 base-version: stable-24.08
@@ -118,8 +118,7 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.mime.xml -t /app/share/mime/packages
 
       - update-mime-database /app/share/mime
-      - desktop-file-install --rebuild-mime-info-cache --dir=/app/share/applications
-        ${FLATPAK_ID}.desktop
+      - desktop-file-install --rebuild-mime-info-cache --dir=/app/share/applications ${FLATPAK_ID}.desktop
 
     sources:
       - type: extra-data
