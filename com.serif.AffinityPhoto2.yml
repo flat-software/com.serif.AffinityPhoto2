@@ -1,6 +1,6 @@
 app-id: com.serif.AffinityPhoto2
 runtime: org.gnome.Platform
-runtime-version: "48"
+runtime-version: '48'
 sdk: org.gnome.Sdk
 base: org.winehq.Wine
 base-version: stable-24.08
@@ -39,8 +39,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/zenity/4.1/zenity-4.1.99.tar.xz
-        sha256: 6fe2aa313c71e91ffa55b11dbec7904f31a40303e0a3f6016820ff6dee329ee2
+        url: https://download.gnome.org/sources/zenity/4.2/zenity-4.2.0.tar.xz
+        sha256: 5f983340c6fa55f4fab5a9769d0771b2cdf1365e2c158ac11cc16ffd892f6bcd
         x-checker-data:
           type: gnome
           name: zenity
@@ -94,8 +94,8 @@ modules:
     sources:
       - type: archive
         dest-filename: affinityphoto.zip
-        url: http://localhost:5173/download/2.6.3
-        sha256: 26fd3149e8ccbd3cc75e916b68b572821588cebd8869e129262b62725d0c93b7
+        url: http://localhost:5173/download/2.6.4
+        sha256: d578006cb1fb1b24e157b6fec1f8a57fd36745df817a813b048137e952b5e3f6
         strip-components: 0
         x-checker-data:
           type: json
@@ -118,7 +118,8 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.mime.xml -t /app/share/mime/packages
 
       - update-mime-database /app/share/mime
-      - desktop-file-install --rebuild-mime-info-cache --dir=/app/share/applications ${FLATPAK_ID}.desktop
+      - desktop-file-install --rebuild-mime-info-cache --dir=/app/share/applications
+        ${FLATPAK_ID}.desktop
 
     sources:
       - type: extra-data
